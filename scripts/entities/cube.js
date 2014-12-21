@@ -6,8 +6,8 @@ var body = require("../components/body").body,
 function cube() {
   this.body = new body({
     position: {
-      x: Math.random() * 1280,
-      y: Math.random() * 600
+      x: Math.random() * 12800,
+      y: Math.random() * 6000
     },
     size: {
       width: 13,

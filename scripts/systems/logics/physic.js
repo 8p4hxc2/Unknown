@@ -21,8 +21,8 @@ function initialize() {
 }
 
 function run() {
-  world.Step(1 / 60, 10, 10);
-  world.ClearForces();
+  /*world.Step(1 / 60, 10, 10);
+  world.ClearForces();*/
 }
 
 function registerComponent(type, component) {

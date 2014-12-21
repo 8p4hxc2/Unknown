@@ -5,7 +5,7 @@ var mouse2 = require("../components/mouse").Mouse;
 function mouse() {
   this.position = new position();
   this.sprite = new sprite({
-    texture: "cursor.png"
+    texture: "ressources/cursor.png"
   });
   this.mouse = new mouse2();
 }

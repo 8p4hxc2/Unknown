@@ -1,4 +1,4 @@
-var PIXI = require("../scripts/libs/pixi.dev"),
+var PIXI = require("pixi.js"),
   stats = require("../scripts/libs/stats"),
   events = require("../scripts/events"),
   entityFactory = require("../scripts/entityFactory"),
@@ -11,7 +11,7 @@ function init() {
   window.document.body.appendChild(stats.domElement);
   initSystems();
   initEvents();
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 1000; i++) {
     events.Say("create/cube");
   }
   events.Say("create/ground");

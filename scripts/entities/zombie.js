@@ -20,7 +20,7 @@ function zombie() {
     restitution: 0.6
   }),
   this.sprite = new sprite({
-    texture: "bunny.png"
+    texture: "ressources/bunny.png"
   });
 }
 exports.zombie = zombie;
