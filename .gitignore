@@ -38,6 +38,24 @@ $RECYCLE.BIN/
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
+node_modules/*
 Network Trash Folder
 Temporary Items
 .apdisk
+credits.html
+d3dcompiler_46.dll
+ffmpegsumo.dll
+icudtl.dat
+libEGL.dll
+libGLESv2.dll
+locales/am.pak
+locales/ar.pak
+locales/bg.pak
+locales/bn.pak
+locales/ca.pak
+locales/cs.pak
+locales/da.pak
+locales/de.pak
+locales/el.pak
+*.pak
+*.exe
