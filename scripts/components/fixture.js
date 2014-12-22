@@ -1,6 +1,8 @@
+"use strict";
+
 function fixture(datas) {
-  this.density = datas.density;
-  this.friction = datas.friction;
-  this.restitution = datas.restitution;
+  this.density = datas.density,
+    this.friction = datas.friction,
+    this.restitution = datas.restitution;
 }
-exports.fixture = fixture;
+module.exports = fixture;

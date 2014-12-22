@@ -1,7 +1,9 @@
+"use strict";
+
 function body(datas) {
   this.objet = null,
-  this.position = datas.position;
-  this.size = datas.size;
-  this.type = datas.type;
+    this.position = datas.position,
+    this.size = datas.size,
+    this.type = datas.type;
 }
-exports.body = body;
+module.exports = body;

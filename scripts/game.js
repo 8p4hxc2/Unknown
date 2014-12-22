@@ -1,31 +1,34 @@
 var PIXI = require("pixi.js"),
-  stats = require("../scripts/libs/stats"),
+  stats = new require("stats-js")(),
   events = require("../scripts/events"),
   entityFactory = require("../scripts/entityFactory"),
   stage, renderer, systems = [];
 
 function init() {
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
   stage = new PIXI.Stage(0x66FF99);
   renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
   window.document.body.appendChild(renderer.view);
   window.document.body.appendChild(stats.domElement);
   initSystems();
   initEvents();
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < 1; i++) {
     events.Say("create/cube");
   }
   events.Say("create/ground");
-  events.Say("create/mouse");
+  //events.Say("create/mouse");
   window.requestAnimFrame(run);
 }
 
 function initSystems() {
-  var controllersMouse = require("../scripts/systems/controllers/mouse");
+  /*var controllersMouse = require("../scripts/systems/controllers/mouse");
   controllersMouse.Initialize(stage);
   systems.push(controllersMouse);
   var logicsMouse = require("../scripts/systems/logics/mouse");
   logicsMouse.Initialize();
-  systems.push(logicsMouse);
+  systems.push(logicsMouse);*/
   var logicsPhysic = require("../scripts/systems/logics/physic");
   logicsPhysic.Initialize();
   systems.push(logicsPhysic);

@@ -14,15 +14,27 @@ var Box2D = require("box2dweb"),
     "body": [],
     "fixture": []
   },
-  componentsLength = 0;
+  componentsLength = 0,
+  lol = 0;
 
 function initialize() {
-  world = new b2World(new b2Vec2(0, 9.8), true);
+  world = new b2World(new b2Vec2(0, 0), true);
 }
 
 function run() {
-  /*world.Step(1 / 60, 10, 10);
-  world.ClearForces();*/
+  world.Step(1 / 60, 10, 10);
+  //bodies[0] - > ApplyForce(b2Vec2(0, 50), bodies[0] - > GetWorldCenter());
+  if (lol === 0) {
+    lol = 1;
+    var force = new b2Vec2(0, 20000);
+    components.body[0].objet.ApplyImpulse(force, components.body[0].objet.GetWorldCenter());
+  }
+  if (lol === 1) {
+    lol = 3;
+    var force = new b2Vec2(0, -10000);
+    components.body[0].objet.ApplyImpulse(force, components.body[0].objet.GetWorldCenter());
+  }
+  world.ClearForces();
 }
 
 function registerComponent(type, component) {
@@ -53,7 +65,7 @@ function addEntity() {
   componentsLength++;
 }
 exports.Initialize = initialize,
-exports.Run = run,
-exports.RegisterComponent = registerComponent,
-exports.GetComponents = getComponents;
-exports.AddEntity = addEntity;
+  exports.Run = run,
+  exports.RegisterComponent = registerComponent,
+  exports.GetComponents = getComponents,
+  exports.AddEntity = addEntity;

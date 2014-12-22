@@ -4,7 +4,7 @@ events.Listen("create/cube", cube);
 events.Listen("create/mouse", mouse);
 
 function cube() {
-  var a = require("../scripts/entities/zombie").zombie;
+  var a = require("../scripts/entities/cube");
   var c = new a();
   events.Say("registerInSystems", c);
 }
@@ -14,7 +14,6 @@ function ground() {
   var c = new a();
   events.Say("registerInSystems", c);
 }
-
 
 function mouse() {
   var a = require("../scripts/entities/mouse").mouse;
