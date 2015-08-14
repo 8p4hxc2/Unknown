@@ -1,25 +1,26 @@
-var PIXI = require("pixi.js"),
-  stats = new require("stats-js")(),
+var stats = new require("stats-js")(),
   events = require("../scripts/events"),
   entityFactory = require("../scripts/entityFactory"),
-  stage, renderer, systems = [];
+  systems = [],
+  requestAnimFrame = null;
 
-function init() {
+function init(_requestAnimFrame) {
+  requestAnimFrame = _requestAnimFrame;
   stats.domElement.style.position = 'absolute';
   stats.domElement.style.left = '0px';
   stats.domElement.style.top = '0px';
-  stage = new PIXI.Stage(0x66FF99);
-  renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
-  window.document.body.appendChild(renderer.view);
+  //stage = new PIXI.Stage(0x66FF99);
+  //renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+  //window.document.body.appendChild(renderer.view);
   window.document.body.appendChild(stats.domElement);
-  initSystems();
-  initEvents();
-  for (var i = 0; i < 1; i++) {
+  /*initSystems();
+  initEvents();*/
+  /*for (var i = 0; i < 1; i++) {
     events.Say("create/cube");
   }
-  events.Say("create/ground");
+  events.Say("create/ground");*/
   //events.Say("create/mouse");
-  window.requestAnimFrame(run);
+  requestAnimFrame(run);
 }
 
 function initSystems() {
@@ -32,7 +33,7 @@ function initSystems() {
   var logicsPhysic = require("../scripts/systems/logics/physic");
   logicsPhysic.Initialize();
   systems.push(logicsPhysic);
-  var renderersSprite = require("../scripts/systems/renderers/sprite");
+  /*var renderersSprite = require("../scripts/systems/renderers/sprite");
   renderersSprite.Initialize(PIXI, stage);
   systems.push(renderersSprite);
   var renderersSpriteStatic = require("../scripts/systems/renderers/spriteStatic");
@@ -40,7 +41,7 @@ function initSystems() {
   systems.push(renderersSpriteStatic);
   var renderersGraphic = require("../scripts/systems/renderers/graphic");
   renderersGraphic.Initialize(PIXI, stage);
-  systems.push(renderersGraphic);
+  systems.push(renderersGraphic);*/
 }
 
 function initEvents() {
@@ -78,11 +79,11 @@ function createSprite(config) {
 
 function run() {
   stats.begin();
-  window.requestAnimFrame(run);
+  requestAnimFrame(run);
   for (var i = 0, j = systems.length; i < j; i++) {
     systems[i].Run();
   }
-  renderer.render(stage);
+  //renderer.render(stage);
   stats.end();
 }
 exports.Init = init;

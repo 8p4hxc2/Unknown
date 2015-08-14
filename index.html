@@ -1,8 +1,28 @@
+<!doctype html>
 <html>
+
 <head>
-	<style>body{margin:0px;padding:0px;cursor:none;}</style>
-	<script>function load(){global.document = window.document;global.navigator = window.navigator;global.Image = window.Image;require('./scripts/game').Init();}</script>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      /*cursor: none;*/
+    }
+  </style>
+  <script></script>
+  <script>
+    function load() {
+    	//global.document = window.document;
+    	//global.navigator = window.navigator;
+    	//global.Image = window.Image;
+			//global.requestAnimationFrame=window.requestAnimationFrame;
+    	require('./scripts/game').Init(window.requestAnimationFrame);
+      //require('./scripts/cave');
+    }
+  </script>
 </head>
+
 <body onload="load()">
 </body>
+
 </html>
