@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script src="alea.js"></script>
+        <script src="perlin.js"></script>
+        <script src="main.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        <div id="controls">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="seed" class="col-sm-3 control-label">Seed</label>
+                    <div class="col-sm-9">
+                        <input id="seed" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="width" class="col-sm-3 control-label">Width</label>
+                    <div class="col-sm-9">
+                        <input id="width" class="form-control" value="768">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="height" class="col-sm-3 control-label">Height</label>
+                    <div class="col-sm-9">
+                        <input id="height" class="form-control" value="384">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="point stars" checked> Point stars
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="stars" checked> Stars
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="nebulae" checked> Nebulae
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="sun" checked> Sun
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <button type="button" class="btn btn-default" id="render">Render</button>
+                        <button type="button" class="btn btn-default" id="random">Random</button>
+                    </div>
+                </div>
+            </form>
+            <div id="activity">done</div>
+        </div>
+        <div id="render container"></div>
+    </body>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-47947009-1', 'wwwtyro.github.io');
+        ga('send', 'pageview');
+    </script>
+
+</html>
+
