@@ -1,6 +1,7 @@
 "use strict";
-const PIXI = require("pixi");
-class Sprite extends PIXI.Sprite {
+let System = require("../system");
+
+class Sprite extends System {
 	/*run() {
 		for (let component in this.components) {
 			console.log(component);
@@ -8,4 +9,4 @@ class Sprite extends PIXI.Sprite {
 	}*/
 }
 
-module.exports=Sprite;
+module.exports = Sprite;

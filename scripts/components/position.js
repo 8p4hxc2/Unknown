@@ -1,7 +1,8 @@
 "use strict";
 
-function position() {
-  this.x = 0,
-    this.y = 0;
+function Position() {
+	this.x = 0;
+	this.y = 0;
 }
-module.exports = position;
+
+module.exports = Position;

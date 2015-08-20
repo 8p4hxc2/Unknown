@@ -1,26 +1,56 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.38
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart app@0.0.0
-6 info start app@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info app@0.0.0 Failed to exec start script
-9 error app@0.0.0 start: `electron .`
-9 error Exit status 127
-10 error Failed at the app@0.0.0 start script.
-10 error This is most likely a problem with the app package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     electron .
-10 error You can get their info via:
-10 error     npm owner ls app
-10 error There is likely additional logging output above.
-11 error System Linux 4.0.4-202.fc21.x86_64
-12 error command "/usr/bin/node" "/usr/bin/npm" "start"
-13 error cwd /home/alesergent/Documents/unknownew/Unknown
-14 error node -v v0.10.38
-15 error npm -v 1.4.28
-16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+4 warn package.json app@0.0.0 No description
+5 warn package.json app@0.0.0 No README data
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ '/home/alesergent/Documents/unknownew/Unknown',
+7 verbose install   [ 'electron-debug',
+7 verbose install     'grunt',
+7 verbose install     'grunt-named-modules',
+7 verbose install     'electron-packager',
+7 verbose install     'electron-prebuilt' ] ]
+8 info preinstall app@0.0.0
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping electron-debug@^0.1.1 /home/alesergent/Documents/unknownew/Unknown
+11 verbose already installed skipping grunt@^0.4.1 /home/alesergent/Documents/unknownew/Unknown
+12 verbose already installed skipping grunt-named-modules@^1.0.3 /home/alesergent/Documents/unknownew/Unknown
+13 verbose already installed skipping electron-packager@^5.0.0 /home/alesergent/Documents/unknownew/Unknown
+14 verbose already installed skipping electron-prebuilt@^0.30.0 /home/alesergent/Documents/unknownew/Unknown
+15 silly resolved []
+16 info build /home/alesergent/Documents/unknownew/Unknown
+17 verbose linkStuff [ false, false, false, '/home/alesergent/Documents/unknownew' ]
+18 info linkStuff app@0.0.0
+19 verbose linkBins app@0.0.0
+20 verbose linkMans app@0.0.0
+21 verbose rebuildBundles app@0.0.0
+22 verbose rebuildBundles [ '.bin',
+22 verbose rebuildBundles   'electron-debug',
+22 verbose rebuildBundles   'electron-packager',
+22 verbose rebuildBundles   'electron-prebuilt',
+22 verbose rebuildBundles   'grunt',
+22 verbose rebuildBundles   'grunt-named-modules',
+22 verbose rebuildBundles   'renderer' ]
+23 verbose rebuild bundle /home/alesergent/Documents/unknownew/Unknown/node_modules/renderer
+24 info install app@0.0.0
+25 info postinstall app@0.0.0
+26 verbose unsafe-perm in lifecycle true
+27 info app@0.0.0 Failed to exec postinstall script
+28 error app@0.0.0 postinstall: `grunt namedModules`
+28 error Exit status 3
+29 error Failed at the app@0.0.0 postinstall script.
+29 error This is most likely a problem with the app package,
+29 error not with npm itself.
+29 error Tell the author that this fails on your system:
+29 error     grunt namedModules
+29 error You can get their info via:
+29 error     npm owner ls app
+29 error There is likely additional logging output above.
+30 error System Linux 4.0.4-202.fc21.x86_64
+31 error command "/usr/bin/node" "/usr/bin/npm" "install"
+32 error cwd /home/alesergent/Documents/unknownew/Unknown
+33 error node -v v0.10.38
+34 error npm -v 1.4.28
+35 error code ELIFECYCLE
+36 verbose exit [ 1, true ]

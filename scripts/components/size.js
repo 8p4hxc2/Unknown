@@ -1,7 +1,8 @@
 "use strict";
 
-function size(datas) {
-  this.width = datas.width,
-    this.height = datas.height;
+function Size() {
+	this.width = 0;
+	this.height = 0;
 }
-module.exports = size;
+
+module.exports = Size;

@@ -1,32 +1,20 @@
-var stats = new require("stats-js")(),
-	events = require("../scripts/events"),
-	PIXI = require("../scripts/libs/pixi"),
-	entityFactory = require("../scripts/entityFactory"),
-	systems = [],
-  renderer=null,
-  stage=null,
-	requestAnimFrame = null;
+"use strict";
+const STATS = require("../scripts/libs/stats");
+let Renderer = new require("renderer");
+let systems = [];
 
-function init(_requestAnimFrame) {
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.left = '0px';
-	stats.domElement.style.top = '0px';
-	renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {
-		backgroundColor: 0x1099bb
-	});
-  console.log(window.width);
-	document.body.appendChild(renderer.view);
-
-	stage = new PIXI.Container();
-	window.document.body.appendChild(stats.domElement);
-	/*initSystems();
-	initEvents();*/
-	/*for (var i = 0; i < 1; i++) {
-	  events.Say("create/cube");
-	}
-	events.Say("create/ground");*/
-	//events.Say("create/mouse");
+function initialize() {
+	systems.push(new Renderer(["sprite"]));
+	/*var Sprite = require("../scripts/systems/graphics/sprite");
+	var tt=new Sprite();
+	console.log(tt);*/
+	/*initRenderer();
+	initSystems();*/
 	window.requestAnimationFrame(run);
+}
+
+function initRenderer() {
+	//renderer.Initialize();
 }
 
 function initSystems() {
@@ -36,13 +24,13 @@ function initSystems() {
 	var logicsMouse = require("../scripts/systems/logics/mouse");
 	logicsMouse.Initialize();
 	systems.push(logicsMouse);*/
-	var logicsPhysic = require("../scripts/systems/logics/physic");
+	/*let logicsPhysic = require("../scripts/systems/logics/physic");
 	logicsPhysic.Initialize();
-	systems.push(logicsPhysic);
+	systems.push(logicsPhysic);*/
 	/*var renderersSprite = require("../scripts/systems/renderers/sprite");
 	renderersSprite.Initialize(PIXI, stage);
-	systems.push(renderersSprite);
-	var renderersSpriteStatic = require("../scripts/systems/renderers/spriteStatic");
+	systems.push(renderersSprite);*/
+	/*var renderersSpriteStatic = require("../scripts/systems/renderers/spriteStatic");
 	renderersSpriteStatic.Initialize(PIXI, stage);
 	systems.push(renderersSpriteStatic);
 	var renderersGraphic = require("../scripts/systems/renderers/graphic");
@@ -59,15 +47,15 @@ function registerInSystems(entity) {
 	for (var i = 0, j = systems.length; i < j; i++) {
 		var systemComponents = systems[i].GetComponents();
 		var blueprint = true;
-		for (var componentName in systemComponents) {
-			if (typeof(entity[componentName]) != "object") {
+		for (let systemComponent of systemComponents) {
+			if (typeof(systemComponent) !== "object") {
 				blueprint = false;
 				break;
 			}
 		}
 		if (blueprint) {
-			for (componentName in systemComponents) {
-				systems[i].RegisterComponent(componentName, entity[componentName]);
+			for (let systemComponent in systemComponents) {
+				systems[i].RegisterComponent(componentName, systemComponent);
 			}
 			systems[i].AddEntity();
 		}
@@ -84,12 +72,20 @@ function createSprite(config) {
 }
 
 function run() {
-	stats.begin();
+	STATS.Start();
 	window.requestAnimationFrame(run);
-	for (var i = 0, j = systems.length; i < j; i++) {
-		systems[i].Run();
+	for (let system of systems) {
+		system.run();
 	}
-	renderer.render(stage);
-	stats.end();
+	STATS.End();
 }
-exports.Init = init;
+exports.Initialize = initialize;
+
+
+
+/*initEvents();*/
+/*for (var i = 0; i < 1; i++) {
+	events.Say("create/cube");
+}*/
+//events.Say("create/ground");
+//events.Say("create/mouse");
