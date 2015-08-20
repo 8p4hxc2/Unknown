@@ -5,16 +5,7 @@ let systems = [];
 
 function initialize() {
 	systems.push(new Renderer(["sprite"]));
-	/*var Sprite = require("../scripts/systems/graphics/sprite");
-	var tt=new Sprite();
-	console.log(tt);*/
-	/*initRenderer();
-	initSystems();*/
 	window.requestAnimationFrame(run);
-}
-
-function initRenderer() {
-	//renderer.Initialize();
 }
 
 function initSystems() {
