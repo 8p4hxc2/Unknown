@@ -1,6 +1,6 @@
 "use strict";
 const PIXI = require("pixi");
-let System = require("system");
+const System = require("system");
 
 class Renderer extends System {
 	constructor() {

@@ -8,7 +8,7 @@ class System {
 	}
 
 	run() {
-		console.log("system run");
+		console.log("root system run");
 	}
 
 	registerComponent(type, component) {

@@ -39,6 +39,7 @@
 	"namedModules": {
 		"pixi": "scripts/libs/pixi.js",
 		"renderer": "scripts/systems/renderers/pixi.js",
-		"system": "scripts/core/system.js"
+		"system": "scripts/core/system.js",
+		"core/keyboard": "scripts/core/keyboard.js"
 	}
 }
