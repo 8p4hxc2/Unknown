@@ -1,6 +1,7 @@
 "use strict";
 const PIXI = require("pixi");
 const System = require("system");
+const EventsHandler = require("eventsHandler");
 
 class Renderer extends System {
 	constructor() {
@@ -10,6 +11,11 @@ class Renderer extends System {
 		});
 		document.body.appendChild(this.canvas.view);
 		this.screen = new PIXI.Container();
+
+		var that = this;
+		EventsHandler.listen("Renderer_add", function(sprite) {
+			that.addToScreen(sprite);
+		});
 	}
 
 	run() {

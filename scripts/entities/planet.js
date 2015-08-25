@@ -1,13 +1,11 @@
 "use strict";
 
-let position = require("../components/sprite");
-let size = require("../components/sprite");
-let texture = require("../components/sprite");
-
-function Planet() {
-	this.position = {};
-	this.size = {};
-	this.texture = {};
+class Planet {
+	constructor() {
+		this.position = {};
+		this.size = {};
+		this.sprite = null;
+	}
 }
 
 module.exports = Planet;
