@@ -1,46 +1,38 @@
 {
-	"name": "app",
-	"productName": "App",
-	"version": "0.0.0",
-	"description": "",
-	"license": "MIT",
-	"main": "index.js",
-	"repository": "user/repo",
-	"author": {
-		"name": "",
-		"email": "",
-		"url": ""
-	},
-	"engines": {
-		"node": ">=0.10.0"
-	},
-	"scripts": {
-		"start": "electron .",
-		"build": "electron-packager . $npm_package_productName --out=dist --ignore=dist --prune --asar --all --version=0.30.0",
-		"postinstall": "grunt namedModules"
-	},
-	"files": [
-		"index.js",
-		"index.html",
-		"index.css"
-	],
-	"keywords": [
-		"electron-app"
-	],
-	"dependencies": {
-		"electron-debug": "^0.1.1",
-		"grunt": "^0.4.1",
-		"grunt-named-modules": "^1.0.3"
-	},
-	"devDependencies": {
-		"electron-packager": "^5.0.0",
-		"electron-prebuilt": "^0.30.0"
-	},
-	"namedModules": {
-		"pixi": "scripts/libs/pixi.js",
-		"renderer": "scripts/systems/renderers/pixi.js",
-		"system": "scripts/core/system.js",
-		"eventsHandler": "scripts/core/eventsHandler.js",
-		"keyboard": "scripts/core/keyboard.js"
-	}
+  "name": "app",
+  "productName": "App",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "user/repo",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . $npm_package_productName --out=dist --ignore=dist --prune --asar --all --version=0.30.0"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app"
+  ],
+  "dependencies": {
+    "electron-debug": ">=0.1.1",
+    "grunt": ">=0.4.1",
+    "require-alias":">=1.0.5"
+  },
+  "devDependencies": {
+    "electron-packager": ">=5.0.0",
+    "electron-prebuilt": ">=0.30.0"
+  }
 }
