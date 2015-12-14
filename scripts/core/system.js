@@ -1,23 +1,30 @@
 "use strict";
+
 class System {
-	constructor(blueprint) {
-		this.components = {};
-		for (let component in blueprint) {
-			this.components[component] = [];
-		}
-	}
+  constructor(blueprint) {
+    this.components = [];
+    for (let name in blueprint) {
+      this.components[name] = [];
+    }
+  }
 
-	run() {
-		console.log("root system run");
-	}
+  getComponents() {
+    return this.components;
+  }
 
-	registerComponent(type, component) {
-		this.components[type][0] = component;
-	}
+  register(component) {
+    this.components[component.name] = component;
+  }
 
-	getComponents() {
-		return this.components;
-	}
+  run() {
+    for (let component in this.components) {
+      process(component);
+    }
+  }
+
+  process(component) {
+
+  }
 }
 
 module.exports = System;

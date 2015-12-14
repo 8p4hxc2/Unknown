@@ -1,12 +1,15 @@
 "use strict";
-let System = require("../system");
+
+const System = require("../core/system");
 
 class Sprite extends System {
-	/*run() {
-		for (let component in this.components) {
-			console.log(component);
-		}
-	}*/
+  constructor() {
+    super();
+  }
+	
+  process(component) {
+
+  }
 }
 
 module.exports = Sprite;
