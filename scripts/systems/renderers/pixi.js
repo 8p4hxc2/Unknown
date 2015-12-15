@@ -1,7 +1,7 @@
 "use strict";
-const PIXI = require("pixi");
-const System = require("system");
-const EventsHandler = require("eventsHandler");
+
+const PIXI = global.alias.require("@opengl");
+const System = require("../../core/system");
 
 class Renderer extends System {
 	constructor() {
@@ -11,11 +11,6 @@ class Renderer extends System {
 		});
 		document.body.appendChild(this.canvas.view);
 		this.screen = new PIXI.Container();
-
-		var that = this;
-		EventsHandler.listen("Renderer_add", function(sprite) {
-			that.addToScreen(sprite);
-		});
 	}
 
 	run() {
@@ -26,4 +21,4 @@ class Renderer extends System {
 		this.screen.addChild(sprite);
 	}
 }
-module.exports = Renderer;
+module.exports = new Renderer();

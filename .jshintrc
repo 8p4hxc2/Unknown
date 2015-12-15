@@ -1,5 +1,6 @@
 {
 	"node": true,
 	"esnext": true,
-	"browser": true
+	"browser": true,
+	"predef": ["alias"]
 }
