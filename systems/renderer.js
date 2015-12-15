@@ -1,8 +1,11 @@
 "use strict";
-const PIXI = require("pixi");
 
-class Renderer {
+const PIXI = global.alias.require("@opengl");
+const System = alias.require("@system");
+
+class Renderer extends System {
 	constructor() {
+		super();
 		this.canvas = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {
 			backgroundColor: 0x1099bb
 		});
@@ -18,4 +21,4 @@ class Renderer {
 		this.screen.addChild(sprite);
 	}
 }
-module.exports = Renderer;
+module.exports = new Renderer();
