@@ -1,9 +1,8 @@
 "use strict";
 
 class Component {
-	constructor(name, entity) {
+	constructor(name) {
 		this.name = name;
-		this.entity = entity;
 	}
 }
 

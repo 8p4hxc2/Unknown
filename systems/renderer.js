@@ -1,19 +1,25 @@
 "use strict";
 
-const PIXI = global.alias.require("@opengl");
+const opengl = global.alias.require("@opengl");
 const System = alias.require("@system");
 
 class Renderer extends System {
 	constructor() {
-		super();
-		this.canvas = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, {
+		super({
+			"sprite": true
+		});
+		this.canvas = opengl.autoDetectRenderer(window.innerWidth, window.innerHeight, {
 			backgroundColor: 0x1099bb
 		});
 		document.body.appendChild(this.canvas.view);
-		this.screen = new PIXI.Container();
+
+		this.screen = new opengl.Container();
 	}
 
-	run() {
+	process(entity) {
+		for (let entity in this.entities) {
+			entity.position.x += 10;
+		}
 		this.canvas.render(this.screen);
 	}
 

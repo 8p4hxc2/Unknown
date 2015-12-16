@@ -2,13 +2,25 @@
 
 class Entity {
 	constructor(id) {
-		this.id = id + "_" + new Date().getTime();
+		this._id = id + "_" + new Date().getTime();
 		this.components = [];
 	}
 
-	addComponent(entity, name, ...args) {
+	get id() {
+		return this._id;
+	}
+
+	set id(value) {
+		this._id = value;
+	}
+
+	addComponent(name, ...args) {
 		var Component = require("../components/" + name);
-		this.components[name] = new Component(entity, ...args);
+		this.components[name] = new Component(...args);
+	}
+
+	contain(component) {
+		return typeof(this.components[component]) !== "undefined";
 	}
 }
 
