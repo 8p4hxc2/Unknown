@@ -25,7 +25,6 @@ function initialize() {
 		var tt = new Ship(resources.bunny.texture);
 		renderer.register(tt);
 		damage.register(tt);
-		tt.test = ",,,,,,,,,,,,,";
 
 		console.log(renderer);
 		console.log(damage);

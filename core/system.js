@@ -17,7 +17,7 @@ class System {
 
 	run() {
 		for (let entity in this.entities) {
-			this.process(this.entities[entity.id]);
+			this.process(this.entities[entity]);
 		}
 	}
 
