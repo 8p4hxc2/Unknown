@@ -1,16 +1,16 @@
 "use strict";
 
-const opengl = alias.require("@opengl");
+const OPENGL = alias.require("@opengl");
 const Component = alias.require("@component");
 
 class Sprite extends Component {
-	constructor(entity, x, y, texture) {
-		super("sprite", entity);
+  constructor(x, y, texture) {
+    super("sprite");
 
-		this.ref = new opengl.Sprite(texture);
-		this.ref.position.x = x;
-		this.ref.position.y = y;
-	}
+    this.ref = new OPENGL.Sprite(texture);
+    this.ref.position.x = x;
+    this.ref.position.y = y;
+  }
 }
 
 module.exports = Sprite;

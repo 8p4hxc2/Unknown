@@ -3,12 +3,13 @@
 const Entity = alias.require("@entity");
 
 class Ship extends Entity {
-	constructor(resource) {
-		super("ship");
+  constructor(resource, thrust) {
+    super("ship");
 
-		this.addComponent("sprite", 550, 250, resource);
-		this.addComponent("position", 550, 250);
-	}
+    this.addComponent("sprite", 50, 250, resource);
+    this.addComponent("position", 50, 50);
+    this.addComponent("engine", thrust);
+  }
 }
 
 module.exports = Ship;

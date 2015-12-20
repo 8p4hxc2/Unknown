@@ -1,29 +1,32 @@
 "use strict";
 
 class System {
-	constructor(blueprint) {
-		this.blueprint = blueprint;
-		this.entities = [];
-	}
+  constructor(blueprint) {
+    this.blueprint = blueprint;
+    this.entities = [];
+  }
 
-	register(entity) {
-		for (let component in this.blueprint) {
-			if (entity.contain(component)) {
-				this.entities[entity.id] = entity;
-				break;
-			}
-		}
-	}
+  register(entity) {
+    let match = 0;
+    let total = 0;
 
-	run() {
-		for (let entity in this.entities) {
-			this.process(this.entities[entity]);
-		}
-	}
+    for (let component in this.blueprint) {
+      total++;
+      if (entity.contain(component)) {
+        match++;
+      }
+    }
 
-	process(component) {
+    if (match === total) {
+      this.entities[entity.id] = entity;
+    }
+  }
 
-	}
+  run() {
+    for (let entity in this.entities) {
+      this.process(this.entities[entity]);
+    }
+  }
 }
 
 module.exports = System;

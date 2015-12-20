@@ -22,8 +22,8 @@
 
     <body>
         <script type="text/javascript" charset="utf-8">
-            
-            var SPRITE_SCALE = 2;
+
+            var SPRITE_SCALE = 8;
             var SPRITE_COUNT = 100;
 
             var spaceship = new psg.Mask([
@@ -54,8 +54,8 @@
                     0,0,0,1,1,1,1,1,1,0,0,0,
                     0,0,0,0,1,1,1,1,0,0,0,0,
                     0,0,0,0,0,0,0,0,0,0,0,0
-            ], 12, 12, false, false); 
-                    
+            ], 12, 12, false, false);
+
             var robot = new psg.Mask([
                     0, 0, 0, 0,
                     0, 1, 1, 1,
@@ -78,7 +78,7 @@
             div = document.createElement('div');
             div.innerText = 'Colored ship sprites';
             div.appendChild(document.createElement('hr'));
-            
+
             for (i = 0; i < SPRITE_COUNT; i++) {
                 sprite = new psg.Sprite(spaceship, {
                     colored         : true
@@ -87,12 +87,12 @@
             }
 
             fragment.appendChild(div);
-            
+
             // Example 2
             div = document.createElement('div');
             div.innerText = 'Colored ship sprites (with low saturation)';
             div.appendChild(document.createElement('hr'));
-            
+
             for (i = 0; i < SPRITE_COUNT; i++) {
                 sprite = new psg.Sprite(spaceship, {
                     colored         : true,
@@ -107,7 +107,7 @@
             div = document.createElement('div');
             div.innerText = 'Colored ship sprites (with many color variations per ship)';
             div.appendChild(document.createElement('hr'));
-            
+
             for (i = 0; i < SPRITE_COUNT; i++) {
                 sprite = new psg.Sprite(spaceship, {
                     colored         : true,
@@ -118,12 +118,12 @@
             }
 
             fragment.appendChild(div);
-            
+
             // Example 4
             div = document.createElement('div');
             div.innerText = 'Colored dragon sprites';
             div.appendChild(document.createElement('hr'));
-            
+
             for (i = 0; i < SPRITE_COUNT; i++) {
                 sprite = new psg.Sprite(dragon, {
                     colored         : true

@@ -3,15 +3,15 @@
 const System = alias.require("@system");
 
 class Damage extends System {
-	constructor() {
-		super({
-			"position": true
-		});
-	}
+  constructor() {
+    super({
+      "position": true
+    });
+  }
 
-	process(entity) {
-		console.log(entity.components.position.x);
-	}
+  process(entity) {
+    entity.components.position.x += 1;
+  }
 }
 
 module.exports = new Damage();

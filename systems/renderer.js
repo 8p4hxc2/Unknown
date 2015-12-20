@@ -16,13 +16,23 @@ class Renderer extends System {
     this.screen = new opengl.Container();
   }
 
-  process(entity) {
-    entity.components.position.x += 1;
+  run() {
+    super.run();
     this.canvas.render(this.screen);
   }
 
+  process(entity) {
+    if (!entity.addedToScreen) {
+      this.addToScreen(entity.components.sprite);
+      entity.addedToScreen = true;
+    }
+
+    entity.components.sprite.ref.position.x = entity.components.position.x;
+    entity.components.sprite.ref.position.y = entity.components.position.y;
+  }
+
   addToScreen(sprite) {
-    this.screen.addChild(sprite);
+    this.screen.addChild(sprite.ref);
   }
 }
 module.exports = new Renderer();
